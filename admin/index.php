@@ -55,17 +55,13 @@
                     </li>
                 </ul>
                 <!-- END TOP-LEFT TOOLBAR-->
-                <?php
-                include 'session/koneksi.php';
-                $nama = mysqli_query($koneksi, "select * from admin");
-                $d = mysqli_fetch_array($nama);
-                ?>
+                
                 <!-- START TOP-RIGHT TOOLBAR-->
                 <ul class="nav navbar-toolbar">
                     <li class="dropdown dropdown-user">
                         <a class="nav-link dropdown-toggle link" data-toggle="dropdown">
                             <img src="../assets/img/admin-avatar.png" />
-                            <span></span><?php echo $d['nama']; ?><i class="fa fa-angle-down m-l-5"></i></a>
+                            <span></span><?php echo $_SESSION['nama']; ?><i class="fa fa-angle-down m-l-5"></i></a>
                         <ul class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="session/profile.php"><i class="fa fa-user"></i>Profile</a>
                             <a class="dropdown-item" href="session/setting.php"><i class="fa fa-cog"></i>Settings</a>
@@ -78,6 +74,7 @@
             </div>
         </header>
         <!-- END HEADER-->
+        
         <!-- START SIDEBAR-->
         <nav class="page-sidebar" id="sidebar">
             <div id="sidebar-collapse">
@@ -86,7 +83,7 @@
                         <img src="../assets/img/admin-avatar.png" width="45px" />
                     </div>
                     <div class="admin-info">
-                        <div class="font-strong"><?php echo $d['nama']; ?></div><small><<?php echo $d['jabatan']; ?></small></div>
+                        <div class="font-strong"><?php echo $_SESSION['nama']; ?></div><small><?php echo $_SESSION['jabatan']; ?></small></div>
                 </div>
                 <ul class="side-menu metismenu">
                     <li>

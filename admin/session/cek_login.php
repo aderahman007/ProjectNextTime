@@ -7,12 +7,15 @@ $username = $_POST['username'];
 $password = md5($_POST['password']);
 
 
-$data = mysqli_query($koneksi, "select * from admin where username='$username' and password='$password'");
-$cek = mysqli_num_rows($data);
+$login = mysqli_query($koneksi, "select * from admin where username='$username' and password='$password'");
+$cek = mysqli_num_rows($login);
 
 if ($cek > 0) {
 	# code...
-	$_SESSION['username'] = $username;
+	$bio = mysqli_fetch_array($login);
+	$_SESSION['nama'] = $bio['nama'];
+	$_SESSION['jabatan'] = $bio['jabatan'];
+	$_SESSION['username'] = $bio['username'];
 	$_SESSION['status'] = "login";
 	header("location:../index.php");
 }else{
