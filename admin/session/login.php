@@ -56,7 +56,7 @@
                 <button class="btn btn-info btn-block" type="submit">Login</button>
             </div>
             <div class="social-auth-hr">
-                <span>Or login with</span>
+                <span>||</span>
             </div>
             
             <div class="text-center">Not a member?
